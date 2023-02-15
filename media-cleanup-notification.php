@@ -14,12 +14,9 @@ function media_cleanup_notification_activate() {
 }
 register_activation_hook( __FILE__, 'media_cleanup_notification_activate' );
 
-
-
 function media_cleanup_notification_activate() {
     add_option( 'media_cleanup_notification_last_sent', time() );
 }
-
 
 function media_cleanup_notification_schedule() {
     if ( ! wp_next_scheduled( 'media_cleanup_notification_cron' ) ) {
@@ -27,7 +24,6 @@ function media_cleanup_notification_schedule() {
     }
 }
 add_action( 'wp', 'media_cleanup_notification_schedule' );
-
 
 function media_cleanup_notification_cron() {
     // get the last time the notification was sent
@@ -63,6 +59,4 @@ function media_cleanup_notification_deactivate() {
     delete_option( 'media_cleanup_notification_last_sent' );
 }
 register_deactivation_hook( __FILE__, 'media_cleanup_notification_de
-
-
 
