@@ -58,7 +58,7 @@ function media_cleanup_notification_deactivate() {
     wp_clear_scheduled_hook( 'media_cleanup_notification_cron' );
     delete_option( 'media_cleanup_notification_last_sent' );
 }
-register_deactivation_hook( __FILE__, 'media_cleanup_notification_de
+register_deactivation_hook( __FILE__, 'media_cleanup_notification_de');
 
 
 
